@@ -356,4 +356,4 @@ Berechnete Eigenschaften (werden nicht gespeichert, sondern dynamisch berechnet)
 
 ---
 
-*Entwickelt von Mathias Wiebe · Version 1.0*
+*Entwickelt von Mathias Wiebe · Version 1.00*
