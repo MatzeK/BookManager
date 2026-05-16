@@ -106,10 +106,11 @@ struct SettingsView: View {
                 erstelleBackup()
             } label: {
                 HStack {
-                    Label(loc.createBackup, systemImage: "arrow.up.doc")
+                    Image(systemName: "arrow.up.doc")
+                        .foregroundStyle(Color.accentColor)
+                    Text(loc.createBackup)
                         .foregroundStyle(Color.accentColor)
                     Spacer()
-                    // Während des Exports Ladeindikator zeigen, sonst Bücheranzahl.
                     if ladeVorgang {
                         ProgressView()
                     } else {
@@ -127,14 +128,17 @@ struct SettingsView: View {
         }
     }
 
-    // Bereich zum Wiederherstellen eines Backups aus einer JSON-Datei.
     private var wiederherstellungSektion: some View {
         Section {
             Button {
                 zeigeImportPicker = true
             } label: {
-                Label(loc.restoreBackup, systemImage: "arrow.down.doc")
-                    .foregroundStyle(Color.accentColor)
+                HStack {
+                    Image(systemName: "arrow.down.doc")
+                        .foregroundStyle(Color.accentColor)
+                    Text(loc.restoreBackup)
+                        .foregroundStyle(Color.accentColor)
+                }
             }
             .disabled(ladeVorgang)
         } header: {
