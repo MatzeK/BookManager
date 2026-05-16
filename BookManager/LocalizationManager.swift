@@ -21,6 +21,9 @@ enum AppLanguage: String, CaseIterable {
 // @MainActor stellt sicher, dass alle Änderungen auf dem Hauptthread stattfinden.
 @MainActor
 final class LocalizationManager: ObservableObject {
+    // nonisolated init erlaubt die Erstellung durch @StateObject ohne unsafeForcedSync.
+    nonisolated init() {}
+
     // @AppStorage speichert den Wert dauerhaft in den App-Einstellungen (UserDefaults).
     // Standard ist Deutsch. didSet sendet eine Änderungsmeldung an alle Views.
     @AppStorage("appLanguage") var language: String = AppLanguage.german.rawValue {

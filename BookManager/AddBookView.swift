@@ -70,9 +70,12 @@ struct AddBookView: View {
                     get: { nil },
                     set: { isbn in
                         if let isbn = isbn {
-                            self.isbn = isbn
-                            // Sobald eine ISBN gescannt wurde, direkt Buchinfos nachladen.
-                            Task { await ladeBuchInfos(isbn: isbn) }
+                            // @MainActor explizit angeben, da der Setter aus einem
+                            // GCD-Kontext (AVFoundation-Delegate) aufgerufen wird.
+                            Task { @MainActor in
+                                self.isbn = isbn
+                                await ladeBuchInfos(isbn: isbn)
+                            }
                         }
                     }
                 ))
@@ -171,33 +174,29 @@ struct AddBookView: View {
     // MARK: - Aktionen
 
     // Lädt Buchinfos (Titel, Autor, Jahr, Cover) von einer Online-API anhand der ISBN.
-    // Läuft asynchron im Hintergrund, damit die App währenddessen bedienbar bleibt.
+    // @MainActor explizit, damit @State-Zugriffe vor und nach dem await klar isoliert sind.
+    @MainActor
     private func ladeBuchInfos(isbn: String) async {
         guard !isbn.isEmpty else { return }
         ladeAPIInfo = true
-        defer { ladeAPIInfo = false } // Ladeindikator immer ausschalten, egal was passiert.
+        defer { ladeAPIInfo = false }
 
         do {
             let info = try await BookAPIService.shared.ladeBuchInfo(isbn: isbn)
-            // UI-Updates müssen auf dem Hauptthread (MainActor) stattfinden.
-            await MainActor.run {
-                titel = info.titel
-                autor = info.autor
-                if info.erscheinungsjahr > 0 {
-                    erscheinungsjahr = info.erscheinungsjahr
-                }
-                if let desc = info.beschreibung {
-                    beschreibung = desc
-                }
-                if let daten = info.coverDaten {
-                    bildDaten = daten
-                }
+            titel = info.titel
+            autor = info.autor
+            if info.erscheinungsjahr > 0 {
+                erscheinungsjahr = info.erscheinungsjahr
+            }
+            if let desc = info.beschreibung {
+                beschreibung = desc
+            }
+            if let daten = info.coverDaten {
+                bildDaten = daten
             }
         } catch {
-            await MainActor.run {
-                fehlerMeldung = error.localizedDescription
-                zeigeFehler = true
-            }
+            fehlerMeldung = error.localizedDescription
+            zeigeFehler = true
         }
     }
 
