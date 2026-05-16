@@ -47,14 +47,30 @@ class ISBNScannerViewController: UIViewController, AVCaptureMetadataOutputObject
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        setupCamera()
         setupOverlay()
+        requestCameraAccess()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard captureSession != nil else { return }
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.captureSession?.startRunning()
+        }
+    }
+
+    private func requestCameraAccess() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            setupCamera()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+                if granted {
+                    DispatchQueue.main.async { self?.setupCamera() }
+                }
+            }
+        default:
+            break
         }
     }
 

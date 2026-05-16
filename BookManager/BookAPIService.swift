@@ -12,13 +12,16 @@ struct BookInfo {
 enum BookAPIFehler: LocalizedError {
     case nichtGefunden
     case netzwerkFehler(Error)
-    case ungueltigeAntwort
+    case ungueltigeAntwort(Int)
 
     var errorDescription: String? {
         switch self {
-        case .nichtGefunden: return "Buch nicht gefunden. Bitte prüfe die ISBN."
-        case .netzwerkFehler(let error): return "Netzwerkfehler: \(error.localizedDescription)"
-        case .ungueltigeAntwort: return "Ungültige Serverantwort. Bitte erneut versuchen."
+        case .nichtGefunden:
+            return "Buch nicht gefunden. Bitte prüfe die ISBN oder gib die Daten manuell ein."
+        case .netzwerkFehler(let error):
+            return "Netzwerkfehler: \(error.localizedDescription)"
+        case .ungueltigeAntwort(let statusCode):
+            return "Serverfehler (HTTP \(statusCode)). Bitte erneut versuchen."
         }
     }
 }
@@ -29,11 +32,23 @@ class BookAPIService {
 
     func ladeBuchInfo(isbn: String) async throws -> BookInfo {
         let bereinigteISBN = isbn.filter { $0.isNumber }
+        print("[BookAPI] Suche ISBN: \(bereinigteISBN)")
 
         do {
-            return try await ladeVonOpenLibrary(isbn: bereinigteISBN)
+            let info = try await ladeVonOpenLibrary(isbn: bereinigteISBN)
+            print("[BookAPI] Open Library: gefunden")
+            return info
         } catch {
-            return try await ladeVonGoogleBooks(isbn: bereinigteISBN)
+            print("[BookAPI] Open Library fehlgeschlagen: \(error.localizedDescription)")
+        }
+
+        do {
+            let info = try await ladeVonGoogleBooks(isbn: bereinigteISBN)
+            print("[BookAPI] Google Books: gefunden")
+            return info
+        } catch {
+            print("[BookAPI] Google Books fehlgeschlagen: \(error.localizedDescription)")
+            throw error
         }
     }
 
@@ -41,11 +56,16 @@ class BookAPIService {
 
     private func ladeVonOpenLibrary(isbn: String) async throws -> BookInfo {
         let urlString = "https://openlibrary.org/api/books?bibkeys=ISBN:\(isbn)&format=json&jscmd=data"
-        guard let url = URL(string: urlString) else { throw BookAPIFehler.ungueltigeAntwort }
+        guard let url = URL(string: urlString) else { throw BookAPIFehler.ungueltigeAntwort(0) }
 
         let (data, response) = try await URLSession.shared.data(from: url)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw BookAPIFehler.ungueltigeAntwort
+        if let httpResponse = response as? HTTPURLResponse {
+            guard (200...299).contains(httpResponse.statusCode) else {
+                if (400...499).contains(httpResponse.statusCode) {
+                    throw BookAPIFehler.nichtGefunden
+                }
+                throw BookAPIFehler.ungueltigeAntwort(httpResponse.statusCode)
+            }
         }
 
         guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
@@ -102,11 +122,16 @@ class BookAPIService {
 
     private func ladeVonGoogleBooks(isbn: String) async throws -> BookInfo {
         let urlString = "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)"
-        guard let url = URL(string: urlString) else { throw BookAPIFehler.ungueltigeAntwort }
+        guard let url = URL(string: urlString) else { throw BookAPIFehler.ungueltigeAntwort(0) }
 
         let (data, response) = try await URLSession.shared.data(from: url)
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw BookAPIFehler.ungueltigeAntwort
+        if let httpResponse = response as? HTTPURLResponse {
+            guard (200...299).contains(httpResponse.statusCode) else {
+                if (400...499).contains(httpResponse.statusCode) {
+                    throw BookAPIFehler.nichtGefunden
+                }
+                throw BookAPIFehler.ungueltigeAntwort(httpResponse.statusCode)
+            }
         }
 
         guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
