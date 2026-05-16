@@ -1,3 +1,8 @@
 
 # Mac specific files
 .DS_Store
+
+# VSXcode auto-generated Swift Package — dieses Projekt wird nur über Xcode gebaut
+Package.swift
+Package.resolved
+.build/
