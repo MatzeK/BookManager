@@ -1,0 +1,96 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/primary.swiftdeps"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/AddBookView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/AddBookView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/AddBookView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/AddBookView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/AddBookView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/AddBookView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/BackupService.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BackupService.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BackupService.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BackupService~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BackupService.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BackupService.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/Book.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Book.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Book.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Book~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Book.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Book.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/BookAPIService.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookAPIService.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookAPIService.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookAPIService~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookAPIService.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookAPIService.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/BookDetailView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookDetailView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookDetailView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookDetailView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookDetailView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookDetailView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/BookManagerApp.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookManagerApp.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookManagerApp.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookManagerApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookManagerApp.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/BookManagerApp.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/ContactPickerView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContactPickerView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContactPickerView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContactPickerView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContactPickerView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContactPickerView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/ContentView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContentView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContentView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ContentView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/EditBookView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/EditBookView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/EditBookView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/EditBookView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/EditBookView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/EditBookView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/ISBNScannerView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ISBNScannerView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ISBNScannerView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ISBNScannerView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ISBNScannerView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/ISBNScannerView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/LocalizationManager.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/LocalizationManager.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/LocalizationManager.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/LocalizationManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/LocalizationManager.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/LocalizationManager.dia"
+  },
+  "/Users/mathias/workspace/BookManager/BookManager/SettingsView.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/SettingsView.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/SettingsView.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/SettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/SettingsView.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/SettingsView.dia"
+  },
+  "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/resource_bundle_accessor.d",
+    "object": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/resource_bundle_accessor.dia"
+  }
+}

@@ -107,6 +107,7 @@ struct SettingsView: View {
             } label: {
                 HStack {
                     Label(loc.createBackup, systemImage: "arrow.up.doc")
+                        .foregroundStyle(Color.accentColor)
                     Spacer()
                     // Während des Exports Ladeindikator zeigen, sonst Bücheranzahl.
                     if ladeVorgang {
@@ -133,6 +134,7 @@ struct SettingsView: View {
                 zeigeImportPicker = true
             } label: {
                 Label(loc.restoreBackup, systemImage: "arrow.down.doc")
+                    .foregroundStyle(Color.accentColor)
             }
             .disabled(ladeVorgang)
         } header: {

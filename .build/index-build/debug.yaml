@@ -1,0 +1,70 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "BookManager-arm64-apple-macosx-debug.module": ["<BookManager-arm64-apple-macosx-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<BookManager-arm64-apple-macosx-debug.module>"]
+  "test": ["<BookManager-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/mathias/workspace/BookManager/BookManager/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/mathias/workspace/BookManager/BookManager/AddBookView.swift","/Users/mathias/workspace/BookManager/BookManager/BackupService.swift","/Users/mathias/workspace/BookManager/BookManager/Book.swift","/Users/mathias/workspace/BookManager/BookManager/BookAPIService.swift","/Users/mathias/workspace/BookManager/BookManager/BookDetailView.swift","/Users/mathias/workspace/BookManager/BookManager/BookManagerApp.swift","/Users/mathias/workspace/BookManager/BookManager/ContactPickerView.swift","/Users/mathias/workspace/BookManager/BookManager/ContentView.swift","/Users/mathias/workspace/BookManager/BookManager/EditBookView.swift","/Users/mathias/workspace/BookManager/BookManager/ISBNScannerView.swift","/Users/mathias/workspace/BookManager/BookManager/LocalizationManager.swift","/Users/mathias/workspace/BookManager/BookManager/SettingsView.swift","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/DerivedSources/resource_bundle_accessor.swift"]
+    outputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/sources"]
+    description: "Write auxiliary file /Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/sources"
+
+  "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/AppIcon~ios-marketing.png":
+    tool: copy-tool
+    inputs: ["/Users/mathias/workspace/BookManager/BookManager/AppIcon~ios-marketing.png"]
+    outputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/AppIcon~ios-marketing.png"]
+    description: "Copying /Users/mathias/workspace/BookManager/BookManager/AppIcon~ios-marketing.png"
+
+  "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/Assets.xcassets":
+    tool: copy-tool
+    inputs: ["/Users/mathias/workspace/BookManager/BookManager/Assets.xcassets/"]
+    outputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/Assets.xcassets/"]
+    description: "Copying /Users/mathias/workspace/BookManager/BookManager/Assets.xcassets"
+
+  "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/Info.plist":
+    tool: copy-tool
+    inputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Info.plist"]
+    outputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/Info.plist"]
+    description: "Copying /Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/Info.plist"
+
+  "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<BookManager-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/Modules/BookManager.swiftmodule"]
+    outputs: ["<BookManager-arm64-apple-macosx-debug.module>"]
+
+  "BookManager-arm64-apple-macosx-debug.module-resources":
+    tool: phony
+    inputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/AppIcon~ios-marketing.png","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/Assets.xcassets/","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager_BookManager.bundle/Info.plist"]
+    outputs: ["<BookManager-arm64-apple-macosx-debug.module-resources>"]
+
+  "C.BookManager-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/mathias/workspace/BookManager/BookManager/AddBookView.swift","/Users/mathias/workspace/BookManager/BookManager/BackupService.swift","/Users/mathias/workspace/BookManager/BookManager/Book.swift","/Users/mathias/workspace/BookManager/BookManager/BookAPIService.swift","/Users/mathias/workspace/BookManager/BookManager/BookDetailView.swift","/Users/mathias/workspace/BookManager/BookManager/BookManagerApp.swift","/Users/mathias/workspace/BookManager/BookManager/ContactPickerView.swift","/Users/mathias/workspace/BookManager/BookManager/ContentView.swift","/Users/mathias/workspace/BookManager/BookManager/EditBookView.swift","/Users/mathias/workspace/BookManager/BookManager/ISBNScannerView.swift","/Users/mathias/workspace/BookManager/BookManager/LocalizationManager.swift","/Users/mathias/workspace/BookManager/BookManager/SettingsView.swift","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/DerivedSources/resource_bundle_accessor.swift","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","<BookManager-arm64-apple-macosx-debug.module-resources>","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/sources"]
+    outputs: ["/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/Modules/BookManager.swiftmodule"]
+    description: "Compiling Swift Module 'BookManager' (13 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","BookManager","-emit-dependencies","-emit-module","-emit-module-path","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/Modules/BookManager.swiftmodule","-output-file-map","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/output-file-map.json","-parse-as-library","-incremental","@/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/sources","-I","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx26.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-Onone","-enable-testing","-j10","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE","-module-cache-path","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/include/BookManager-Swift.h","-swift-version","6","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-sdk","/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk","-target","arm64-apple-ios17.0-simulator","-F","/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks","-F","/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks","-I","/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/usr/lib","-enable-testing","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","bookmanager"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/mathias/workspace/BookManager/BookManager/","/Users/mathias/workspace/BookManager/Package.swift","/Users/mathias/workspace/BookManager/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

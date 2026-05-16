@@ -1,0 +1,3 @@
+module BookManager {
+    header "/Users/mathias/workspace/BookManager/.build/index-build/arm64-apple-macosx/debug/BookManager.build/include/BookManager-Swift.h"
+}

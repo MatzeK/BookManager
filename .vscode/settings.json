@@ -1,0 +1,26 @@
+{
+    "swift.sourcekit-lsp.serverArguments": [
+        "-Xswiftc",
+        "-sdk",
+        "-Xswiftc",
+        "/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+        "-Xswiftc",
+        "-target",
+        "-Xswiftc",
+        "arm64-apple-ios17.0-simulator",
+        "-Xswiftc",
+        "-F",
+        "-Xswiftc",
+        "/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks",
+        "-Xswiftc",
+        "-F",
+        "-Xswiftc",
+        "/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks",
+        "-Xswiftc",
+        "-I",
+        "-Xswiftc",
+        "/Library/Developer/CommandLineTools/Platforms/iPhoneSimulator.platform/Developer/usr/lib",
+        "-Xswiftc",
+        "-enable-testing"
+    ]
+}
